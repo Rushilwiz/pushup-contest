@@ -15,12 +15,14 @@
                         <th scope="col">#</th>
                         <th scope="col">Name</th>
                         <th scope="col">Push-Ups</th>
+                        <th scope="col">Party</th>
                 <tbody>
                 {% for profile in users %}
                     <tr>
                         <th scope="row">{{forloop.counter}}</th>
                         <td>{{profile.user.first_name}} {{profile.user.last_name}}</td>
                         <td>{{profile.pushups}}</td>
+                        <td>{{profile.party}}</td>
                     </tr>
                 {% endfor %}
                 </tbody>
