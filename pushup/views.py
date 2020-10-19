@@ -10,6 +10,8 @@ import datetime
 def home(request):
     times = []
     values = []
+    current_value = get_current_stock_value()
+
     users = Profile.objects.order_by('-pushups')
     print(users)
 
@@ -23,6 +25,10 @@ def home(request):
         'times': times,
         'values': values,
         'users': users,
+        'current_value': current_value
     }
 
     return render(request, 'pushup/index.html', context=context)
+
+def get_current_stock_value():
+    return float(StockValue.objects.order_by('-time').first().value)

@@ -4,6 +4,7 @@
 <div class="row mt-md-3">
     <div class="col-md">
         <canvas id="stockChart"></canvas>
+        <span class="text-center"><h4>Current Value: </h4><h1 style="color: #21CE99">{{current_value}}</h1></span>
     </div>
     <div class="col-md">
         <div class="content-section">
@@ -43,9 +44,8 @@
         data: {
             labels: {{times|safe}},
             datasets: [{
-                label: 'My First dataset',
-                backgroundColor: 'rgb(255, 99, 132)',
-                borderColor: 'rgb(255, 99, 132)',
+                label: 'Pushup Value',
+                borderColor: '#21CE99',
                 data: {{values|safe}}
             }]
         },
