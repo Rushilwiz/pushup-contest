@@ -12,8 +12,6 @@ WORKDIR $APP_HOME
 RUN apk update && apk add libpq postgresql-dev \
     gcc python3-dev musl-dev libffi-dev
 
-COPY ./docker-entrypoint.sh $APP_HOME
-
 COPY . $APP_HOME
 
 RUN pip install -r requirements.txt
